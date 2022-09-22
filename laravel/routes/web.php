@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,5 +26,5 @@ Route::post('/register', [UserController::class, 'registerPost']);
 Route::middleware('auth')->group(function (){
     Route::get('/users', [UserController::class, 'users'])->name('users');
     Route::get('/account', [UserController::class, 'account'])->name('account');
-    Route::get('logout', [UserController::class, 'logout'])->name('logout');
+    Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 });

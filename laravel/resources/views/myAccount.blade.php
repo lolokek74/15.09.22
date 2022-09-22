@@ -19,20 +19,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @forelse($users as $user)
                         <tr>
-                            <th scope="row">{{ $user->id }}</th>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>{{ $user->age }}</td>
-                            <td>{{ $user->size }}</td>
-                            <td>{{ $user->color }}</td>
+                            <th scope="row">{{ $users->id }}</th>
+                            <td>{{ $users->name }}</td>
+                            <td>{{ $users->email }}</td>
+                            <td>{{ $users->age }}</td>
+                            <td>{{ $users->size }}</td>
+                            <td>{{ $users->color }}</td>
                         </tr>
-                    @empty
-                        <tr>
-                            <th colspan="6">В системе нет информации об аккаунте</th>
-                        </tr>
-                    @endforelse
                     </tbody>
                 </table>
             </div>

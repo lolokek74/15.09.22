@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RequestValidationLogin;
 use App\Http\Requests\RequestValidationRegister;
 use App\Models\User;
-use Illuminate\Http\Request;
+use Composer\DependencyResolver\Request;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -59,10 +60,7 @@ class UserController extends Controller
         return back()->with(['success' => true]);
     }
 
-    /**
-     * Выход из массива
-     * @param Request $request
-     */
+
     public function logout(Request $request)
     {
         auth()->logout();
@@ -91,6 +89,6 @@ class UserController extends Controller
         $users = auth()->user();
 
         # compact => ['users => $users]
-        return view('users', compact('users'));
+        return view('myAccount', compact('users'));
     }
 }
