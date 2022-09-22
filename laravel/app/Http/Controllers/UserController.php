@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RequestValidationLogin;
 use App\Http\Requests\RequestValidationRegister;
 use App\Models\User;
-use Composer\DependencyResolver\Request;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -65,7 +65,7 @@ class UserController extends Controller
     {
         auth()->logout();
         $request->session()->regenerate();
-        return_redirect()->route('welcome');
+        return redirect()->route('welcome');
     }
 
     /**
